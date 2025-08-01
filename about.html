@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Exotech Developers</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">Exotech Developers</a>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- About Us Section -->
+        <section class="section-padding about-section">
+            <div class="container">
+                <h1 class="text-center">About Exotech Developers</h1>
+                <div class="about-content" style="margin-top: 40px;">
+                    <div class="about-text">
+                        <h2>Our Story & What We Stand For</h2>
+                        <p>Exotech Developers was founded with a clear vision: to empower businesses of all sizes with a strong, effective, and affordable online presence. We saw a gap in the market for high-quality web development that didn't compromise on price or speed, and we set out to fill it.</p>
+                        <p>We believe that every business, regardless of its scale, deserves a professional and engaging website that truly represents its brand and helps it connect with its audience. Our commitment is to deliver digital solutions that are not just visually appealing, but also highly functional, user-friendly, and optimized for success.</p>
+
+                        <h3>Our Vision</h3>
+                        <p>To be the leading partner for businesses seeking innovative and impactful digital solutions, transforming their online presence into a powerful asset for growth.</p>
+
+                        <h3>Our Mission</h3>
+                        <p>To craft exceptional, tailor-made websites and provide comprehensive digital services that empower our clients to achieve their business objectives, ensuring affordability, quality, and timely delivery.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://placehold.co/600x400/38BDF8/0A192F?text=Our+Team" alt="Exotech Developers Team Meeting">
+                    </div>
+                </div>
+
+                <div class="about-content" style="margin-top: 60px;">
+                    <div class="about-image">
+                        <img src="https://placehold.co/600x400/0A192F/38BDF8?text=Unique+Approach" alt="Unique Web Development Approach">
+                    </div>
+                    <div class="about-text">
+                        <h2>What Makes Us Different?</h2>
+                        <p>In a crowded digital landscape, Exotech Developers stands out through our:</p>
+                        <ul>
+                            <li><strong>Client-Centric Approach:</strong> Your success is our priority. We listen, understand, and build solutions tailored precisely to your needs.</li>
+                            <li><strong>Transparency & Affordability:</strong> No hidden costs, just clear pricing and exceptional value for your investment.</li>
+                            <li><strong>Speed & Efficiency:</strong> We streamline our processes to deliver high-quality websites quickly, without cutting corners.</li>
+                            <li><strong>Comprehensive Support:</strong> From initial concept to ongoing maintenance, we provide end-to-end support, ensuring your peace of mind.</li>
+                            <li><strong>Modern Technology:</strong> We leverage the latest web technologies and best practices to ensure your site is robust, secure, and future-proof.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="text-center" style="margin-top: 60px;">
+                    <h2>Ready to Build Your Digital Future?</h2>
+                    <p>Let's collaborate and create a powerful online presence that drives your business forward.</p>
+                    <a href="contact.html" class="btn">Let’s Build Your Website Together</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Exotech Developers. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile navigation toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close nav menu when a link is clicked (for mobile)
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
