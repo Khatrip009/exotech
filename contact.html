@@ -3,53 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Exotech Developers</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome for icons -->
+    <title>Contact Us - Exotech Developers | Get a Free Quote</title>
+    <meta name="description" content="Contact Exotech Developers for web development services. Get a free quote, connect via WhatsApp, or visit our office in Surat, Gujarat.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yourdomain.com/contact.html">
+    <meta property="og:title" content="Contact Us - Exotech Developers | Get a Free Quote">
+    <meta property="og:description" content="Contact Exotech Developers for web development services. Get a free quote, connect via WhatsApp, or visit our office in Surat, Gujarat.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/contact.html">
+    <meta property="og:image" content="https://yourdomain.com/social-share-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact Us - Exotech Developers | Get a Free Quote">
+    <meta name="twitter:description" content="Contact Us - Exotech Developers | Get a Free Quote">
+    <meta name="twitter:image" content="https://yourdomain.com/social-share-image.jpg">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;560;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles for contact page */
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .contact-form-container,
+        .contact-info-details {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--color-white);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            text-align: left;
+        }
+
+        .contact-form-container h2,
+        .contact-info-details h2 {
+            font-size: 1.8rem;
+            margin-bottom: var(--spacing-lg);
+            color: var(--color-dark-blue-teal);
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 600;
+            color: var(--color-soft-black);
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group textarea {
+            width: 100%;
+            padding: var(--spacing-sm);
+            border: 1px solid var(--color-light-gray);
+            border-radius: var(--border-radius);
+            font-family: var(--font-secondary);
+            font-size: 1rem;
+            color: var(--color-soft-black);
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="email"]:focus,
+        .form-group input[type="tel"]:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-electric-blue);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-info-details p {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-soft-black);
+        }
+
+        .contact-info-details p i {
+            margin-right: var(--spacing-sm);
+            color: var(--color-electric-blue);
+            font-size: 1.2rem;
+        }
+
+        .contact-info-details a {
+            color: var(--color-soft-black);
+        }
+
+        .contact-info-details a:hover {
+            color: var(--color-electric-blue);
+        }
+
+        .contact-info-details .social-icons {
+            margin-top: var(--spacing-lg);
+            text-align: left;
+        }
+
+        .contact-info-details .social-icons a {
+            color: var(--color-soft-black); /* Override footer social icon color for this section */
+        }
+
+        .contact-info-details .social-icons a:hover {
+            color: var(--color-electric-blue);
+        }
+
+        .contact-info-details .footer__qr-image {
+            margin-top: var(--spacing-lg);
+            background-color: var(--color-light-gray); /* Adjust QR background for light section */
+        }
+
+        .map-container {
+            width: 100%;
+            height: 400px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-top: var(--spacing-xl);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Styles for form status messages */
+        .form-status-message {
+            margin-top: var(--spacing-md);
+            padding: var(--spacing-sm);
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .form-status-message.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .form-status-message.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .form-status-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+
+        @media (max-width: 768px) {
+            .contact-content {
+                flex-direction: column;
+            }
+            .contact-form-container,
+            .contact-info-details {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header Section -->
     <header class="header">
-        <div class="container navbar">
-            <a href="index.html" class="logo">Exotech Developers</a>
-            <nav>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+        <div class="container header__container">
+            <div class="header__logo">
+                <a href="index.html">
+                    <img src="exotechlogo.png" alt="Exotech Developers Logo" class="header__logo-image">
+                </a>
+            </div>
+            <nav class="header__nav" id="main-nav">
+                <ul class="header__nav-list">
+                    <li><a href="index.html" class="header__nav-link">Home</a></li>
+                    <li><a href="about.html" class="header__nav-link">About Us</a></li>
+                    <li><a href="services.html" class="header__nav-link">Services</a></li>
+                    
+                    <li><a href="pricing.html" class="header__nav-link">Pricing</a></li>
+                    <li><a href="contact.html" class="header__nav-link active">Contact</a></li>
                 </ul>
             </nav>
-            <div class="hamburger" id="hamburger">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
+            <button class="header__hamburger" id="hamburger-menu" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
 
     <main>
-        <!-- Contact Section -->
-        <section class="section-padding contact-section">
-            <div class="container">
-                <h1 class="text-center">Get In Touch With Us</h1>
-                <p class="text-center" style="max-width: 800px; margin: 20px auto 40px;">Have a project in mind, a question, or just want to say hello? We'd love to hear from you!</p>
+        <!-- Contact Hero Section -->
+        <section class="hero-section hero-section--small">
+            <div class="container hero-section__container">
+                <h1 class="hero-section__heading">Get in Touch with Exotech</h1>
+                <p class="hero-section__subheading">
+                    Have a project in mind or just want to say hello? We'd love to hear from you!
+                </p>
+            </div>
+        </section>
 
-                <div class="contact-grid">
-                    <div class="contact-form-block">
-                        <h3>Send Us a Message</h3>
-                        <form class="contact-form" action="#" method="POST">
-                            <!--
-                                IMPORTANT: To make this form functional, you will need to integrate a backend service.
-                                Here are a few options:
-                                1.  Formspree: Change the 'action' attribute above to your Formspree endpoint (e.g., action="https://formspree.io/f/yourformid").
-                                2.  EmailJS: Use JavaScript to send form data via EmailJS. You'll need to include their SDK and set up a service.
-                                3.  PHP Backend: Create a PHP script on your server to process the form data and send emails.
-                                4.  Netlify Forms / Vercel Forms: If hosting on these platforms, you can often enable form submissions directly through their build process.
-                            -->
+        <!-- Contact Form & Info Section -->
+        <section class="section section--light-gray">
+            <div class="container section__container">
+                <div class="contact-content">
+                    <div class="contact-form-container">
+                        <h2>Send Us a Message</h2>
+                        <!-- Formspree integration: Action updated with your provided hash -->
+                        <!-- Removed action and method attributes for JavaScript handling -->
+                        <form id="contactForm" class="contact-form">
                             <div class="form-group">
                                 <label for="name">Your Name</label>
                                 <input type="text" id="name" name="name" required placeholder="John Doe">
@@ -59,42 +236,46 @@
                                 <input type="email" id="email" name="email" required placeholder="john.doe@example.com">
                             </div>
                             <div class="form-group">
-                                <label for="message">Your Message</label>
-                                <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project or query..."></textarea>
+                                <label for="phone">Phone Number (Optional)</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210">
                             </div>
-                            <button type="submit" class="btn">Send Message</button>
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" name="message" rows="6" required placeholder="Tell us about your project or inquiry..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn--primary">Send Message</button>
+                            <!-- Message display area -->
+                            <div id="formStatusMessage" class="form-status-message"></div>
                         </form>
                     </div>
 
-                    <div class="contact-info-block">
-                        <h3>Contact Information</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> Exotech Developers, 123 Web Street, Digital City, Surat, Gujarat, India - 395007</p>
-                        <p><i class="fas fa-phone"></i> Phone: <a href="tel:+919876543210">+91 98765 43210</a></p>
-                        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:info@exotechdevelopers.com">info@exotechdevelopers.com</a></p>
-                        <p><i class="fas fa-globe"></i> Website: <a href="https://www.exotechdevelopers.com">www.exotechdevelopers.com</a></p>
+                    <div class="contact-info-details">
+                        <h2>Our Contact Information</h2>
+                        <p><i class="fas fa-phone-alt"></i> Phone: <a href="tel:+919510553160">+91 95105 53160</a></p>
+                        <p><i class="fab fa-whatsapp"></i> WhatsApp: <a href="https://wa.me/919510553160" target="_blank">Chat on WhatsApp</a></p>
+                        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:info@exotech.co.in">info@exotech.co.in</a></p>
+                        <p><i class="fas fa-map-marker-alt"></i> Address: 603, Exotech Office, Surat, Gujarat, India</p>
 
-                        <h3 style="margin-top: 30px;">Connect on WhatsApp</h3>
-                        <p>Prefer to chat? Scan the QR code or click the link below to connect with us instantly on WhatsApp.</p>
-                        <div class="text-center" style="margin-top: 20px;">
-                            <img src="https://placehold.co/150x150/0A192F/38BDF8?text=QR+Code" alt="WhatsApp QR Code" style="width: 150px; height: 150px; display: inline-block; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-                            <p style="margin-top: 15px;"><a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="btn">Chat on WhatsApp</a></p>
+                        <div class="social-icons">
+                            <h3>Connect With Us</h3>
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                         </div>
 
-                        <h3 style="margin-top: 30px;">Follow Us</h3>
-                        <div class="social-icons" style="text-align: left;">
-                            <a href="#" aria-label="Facebook" style="color: var(--navy-blue);"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" aria-label="Instagram" style="color: var(--navy-blue);"><i class="fab fa-instagram"></i></a>
-                            <a href="#" aria-label="LinkedIn" style="color: var(--navy-blue);"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" aria-label="Twitter" style="color: var(--navy-blue);"><i class="fab fa-twitter"></i></a>
-                        </div>
+                        <h3 style="margin-top: var(--spacing-xl);">Scan to Connect</h3>
+                        <img src="https://placehold.co/120x120/1A324E/FFFFFF?text=QR+Code" alt="QR Code for Exotech Developers" class="footer__qr-image">
                     </div>
                 </div>
 
                 <!-- Google Map Embed (Optional) -->
-                <div class="map-embed">
-                    <h2 class="text-center" style="margin-bottom: 20px;">Find Us on the Map</h2>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.957597148564!2d72.8222955149341!3d21.19259168593452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f98a2b5e27d%3A0x8f7c9e0a2b5e27d!2sSurat%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1678888888888!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    <p class="text-center" style="font-size: 0.9em; margin-top: 10px;">(Placeholder map for Surat, Gujarat. Replace with your exact location.)</p>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.864778107593!2d72.8093633750058!3d21.19478728052998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f4a3f3a8f6f%3A0x7e7b7e7b7e7b7e7b!2sSurat%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Exotech Developers Office Location">
+                    </iframe>
+                    <!-- Note: The map coordinates and embed URL are placeholders. Replace with actual coordinates for "603, Exotech Office, Surat" for accuracy. -->
                 </div>
             </div>
         </section>
@@ -102,44 +283,35 @@
 
     <!-- Footer Section -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Exotech Developers. All rights reserved.</p>
-            <div class="social-icons">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <div class="container footer__container">
+            <div class="footer__contact-info">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone-alt"></i> <a href="tel:+919510553160">+91 95105 53160</a></p>
+                <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/919510553160" target="_blank">WhatsApp Us</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@exotech.co.in">info@exotech.co.in</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> 603, Exotech Office, Surat, Gujarat, India</p>
+            </div>
+            <div class="footer__social-media">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer__qr-code">
+                <h3>Scan to Connect</h3>
+                <img src="https://placehold.co/120x120/1A324E/FFFFFF?text=QR+Code" alt="QR Code for Exotech Developers" class="footer__qr-image">
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <p>&copy; 2025 EXOTECH Developers. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // JavaScript for mobile navigation toggle
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Close nav menu when a link is clicked (for mobile)
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-
-        // Optional: Pre-fill message based on query parameter (e.g., from pricing page)
-        document.addEventListener('DOMContentLoaded', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const plan = urlParams.get('plan');
-            if (plan) {
-                const messageField = document.getElementById('message');
-                if (messageField) {
-                    messageField.value = `I'm interested in the ${plan.charAt(0).toUpperCase() + plan.slice(1)} Plan. Please tell me more!`;
-                }
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -3,141 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Exotech Developers</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome for icons -->
+    <title>Portfolio - Exotech Developers | Our Web Development Projects</title>
+    <meta name="description" content="Explore the diverse portfolio of web development projects by Exotech Developers, showcasing our expertise in various industries.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yourdomain.com/portfolio.html">
+    <meta property="og:title" content="Portfolio - Exotech Developers | Our Web Development Projects">
+    <meta property="og:description" content="Explore the diverse portfolio of web development projects by Exotech Developers, showcasing our expertise in various industries.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/portfolio.html">
+    <meta property="og:image" content="https://yourdomain.com/social-share-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Portfolio - Exotech Developers | Our Web Development Projects">
+    <meta name="twitter:description" content="Explore the diverse portfolio of web development projects by Exotech Developers, showcasing our expertise in various industries.">
+    <meta name="twitter:image" content="https://yourdomain.com/social-share-image.jpg">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;560;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles for portfolio page */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .portfolio-card {
+            background-color: var(--color-white);
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .portfolio-card__image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 1px solid var(--color-light-gray);
+        }
+
+        .portfolio-card__content {
+            padding: var(--spacing-lg);
+        }
+
+        .portfolio-card__title {
+            font-size: 1.4rem;
+            color: var(--color-dark-navy);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .portfolio-card__description {
+            font-size: 0.95rem;
+            color: var(--color-soft-black);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .portfolio-card__link {
+            display: inline-block;
+            color: var(--color-electric-blue);
+            font-weight: 600;
+        }
+
+        .portfolio-card__link:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <!-- Header Section -->
     <header class="header">
-        <div class="container navbar">
-            <a href="index.html" class="logo">Exotech Developers</a>
-            <nav>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+        <div class="container header__container">
+            <div class="header__logo">
+                <a href="index.html">EXOTECH <span class="text-accent">DEVELOPERS</span></a>
+            </div>
+            <nav class="header__nav" id="main-nav">
+                <ul class="header__nav-list">
+                    <li><a href="index.html" class="header__nav-link">Home</a></li>
+                    <li><a href="about.html" class="header__nav-link">About Us</a></li>
+                    <li><a href="services.html" class="header__nav-link">Services</a></li>
+                    <li><a href="portfolio.html" class="header__nav-link active">Portfolio</a></li>
+                    <li><a href="pricing.html" class="header__nav-link">Pricing</a></li>
+                    <li><a href="contact.html" class="header__nav-link">Contact</a></li>
                 </ul>
             </nav>
-            <div class="hamburger" id="hamburger">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
+            <button class="header__hamburger" id="hamburger-menu" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
 
     <main>
-        <!-- Portfolio Section -->
-        <section class="section-padding portfolio-section">
-            <div class="container">
-                <h1 class="text-center">Our Latest Projects</h1>
-                <p class="text-center" style="max-width: 800px; margin: 20px auto 40px;">Explore a selection of our recent web development projects, showcasing our expertise in creating diverse and impactful digital experiences for our clients.</p>
+        <!-- Portfolio Hero Section -->
+        <section class="hero-section hero-section--small">
+            <div class="container hero-section__container">
+                <h1 class="hero-section__heading">Our Project Showcase</h1>
+                <p class="hero-section__subheading">
+                    Explore a selection of our recent web development projects, demonstrating our expertise and commitment to quality across various industries.
+                </p>
+            </div>
+        </section>
 
+        <!-- Project Grid Section -->
+        <section class="section section--light-gray">
+            <div class="container section__container">
+                <h2 class="section__heading">Featured Projects</h2>
                 <div class="portfolio-grid">
-                    <!-- Portfolio Item 1 -->
-                    <div class="portfolio-item">
-                        <img src="https://placehold.co/600x400/38BDF8/0A192F?text=E-Commerce+Store" alt="E-Commerce Store Screenshot">
-                        <div class="portfolio-content">
-                            <h3>Fashion Retailer E-Commerce</h3>
-                            <p><strong>Client:</strong> StyleHub Co. | <strong>Industry:</strong> Fashion Retail</p>
-                            <p>Developed a dynamic e-commerce platform with secure payment integration, product catalog management, and responsive design for seamless shopping.</p>
-                            <!-- <a href="#" class="btn btn-secondary" style="font-size: 0.9em; padding: 8px 15px;">View Live Site</a> -->
+                    <!-- Project Card 1 -->
+                    <div class="portfolio-card">
+                        <img src="https://placehold.co/600x400/0A192F/FFFFFF?text=Project+1" alt="E-commerce Website Redesign" class="portfolio-card__image">
+                        <div class="portfolio-card__content">
+                            <h3 class="portfolio-card__title">E-commerce Store Redesign</h3>
+                            <p class="portfolio-card__description">A modern, responsive redesign for an online fashion boutique, focusing on enhanced user experience and mobile conversion.</p>
+                            <a href="#" class="portfolio-card__link">View Project <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
-
-                    <!-- Portfolio Item 2 -->
-                    <div class="portfolio-item">
-                        <img src="https://placehold.co/600x400/0A192F/38BDF8?text=Service+Website" alt="Service Business Website Screenshot">
-                        <div class="portfolio-content">
-                            <h3>Local Service Business Website</h3>
-                            <p><strong>Client:</strong> GreenScape Landscaping | <strong>Industry:</strong> Home Services</p>
-                            <p>Created a clean, static website to showcase services, customer testimonials, and an easy-to-use contact form for lead generation.</p>
+                    <!-- Project Card 2 -->
+                    <div class="portfolio-card">
+                        <img src="https://placehold.co/600x400/38BDF8/0A192F?text=Project+2" alt="Corporate Business Website" class="portfolio-card__image">
+                        <div class="portfolio-card__content">
+                            <h3 class="portfolio-card__title">Corporate Business Portal</h3>
+                            <p class="portfolio-card__description">Developed a secure and informative portal for a financial services firm, integrating client dashboards and resource libraries.</p>
+                            <a href="#" class="portfolio-card__link">View Project <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
-
-                    <!-- Portfolio Item 3 -->
-                    <div class="portfolio-item">
-                        <img src="https://placehold.co/600x400/38BDF8/0A192F?text=Portfolio+Site" alt="Artist Portfolio Website Screenshot">
-                        <div class="portfolio-content">
-                            <h3>Artist Portfolio Website</h3>
-                            <p><strong>Client:</strong> Creative Canvas Studio | <strong>Industry:</strong> Arts & Culture</p>
-                            <p>Designed an elegant portfolio site for an artist, featuring a gallery, artist bio, and contact information, optimized for visual display.</p>
+                    <!-- Project Card 3 -->
+                    <div class="portfolio-card">
+                        <img src="https://placehold.co/600x400/1F2937/FFFFFF?text=Project+3" alt="Personal Portfolio Site" class="portfolio-card__image">
+                        <div class="portfolio-card__content">
+                            <h3 class="portfolio-card__title">Artist Portfolio Website</h3>
+                            <p class="portfolio-card__description">A minimalist and visually striking portfolio site for a freelance artist to showcase their digital and traditional artwork.</p>
+                            <a href="#" class="portfolio-card__link">View Project <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
-
-                    <!-- Portfolio Item 4 -->
-                    <div class="portfolio-item">
-                        <img src="https://placehold.co/600x400/0A192F/38BDF8?text=Blog+Platform" alt="Blog Platform Screenshot">
-                        <div class="portfolio-content">
-                            <h3>Tech Blog & Community Platform</h3>
-                            <p><strong>Client:</strong> CodeInsights | <strong>Industry:</strong> Tech & Education</p>
-                            <p>Built a dynamic blog platform with user registration, comment sections, and a robust content management system for tech articles.</p>
+                    <!-- Project Card 4 -->
+                    <div class="portfolio-card">
+                        <img src="https://placehold.co/600x400/F3F4F6/1F2937?text=Project+4" alt="Restaurant Landing Page" class="portfolio-card__image">
+                        <div class="portfolio-card__content">
+                            <h3 class="portfolio-card__title">Restaurant Menu & Booking Site</h3>
+                            <p class="portfolio-card__description">Created a vibrant landing page for a new restaurant, featuring online menu, reservation system, and gallery.</p>
+                            <a href="#" class="portfolio-card__link">View Project <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
-
-                    <!-- Portfolio Item 5 -->
-                    <div class="portfolio-item">
-                        <img src="https://placehold.co/600x400/38BDF8/0A192F?text=Restaurant+Site" alt="Restaurant Website Screenshot">
-                        <div class="portfolio-content">
-                            <h3>Restaurant & Menu Website</h3>
-                            <p><strong>Client:</strong> The Gourmet Bistro | <strong>Industry:</strong> Food & Beverage</p>
-                            <p>Developed an attractive website featuring an interactive menu, online reservation system, and photo gallery to entice diners.</p>
+                    <!-- Project Card 5 -->
+                    <div class="portfolio-card">
+                        <img src="https://placehold.co/600x400/800080/FFFFFF?text=Project+5" alt="Non-profit Organization Website" class="portfolio-card__image">
+                        <div class="portfolio-card__content">
+                            <h3 class="portfolio-card__title">Non-profit Organization Website</h3>
+                            <p class="portfolio-card__description">Designed and developed an engaging website for a charity, facilitating donations and volunteer sign-ups.</p>
+                            <a href="#" class="portfolio-card__link">View Project <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
-
-                    <!-- Portfolio Item 6 -->
-                    <div class="portfolio-item">
-                        <img src="https://placehold.co/600x400/0A192F/38BDF8?text=Consulting+Site" alt="Consulting Firm Website Screenshot">
-                        <div class="portfolio-content">
-                            <h3>Consulting Firm Corporate Site</h3>
-                            <p><strong>Client:</strong> Apex Consulting Group | <strong>Industry:</strong> Business Consulting</p>
-                            <p>Created a professional corporate website highlighting services, team profiles, and case studies to build credibility and attract clients.</p>
+                    <!-- Project Card 6 -->
+                    <div class="portfolio-card">
+                        <img src="https://placehold.co/600x400/0A192F/38BDF8?text=Project+6" alt="Educational Platform" class="portfolio-card__image">
+                        <div class="portfolio-card__content">
+                            <h3 class="portfolio-card__title">Online Learning Platform</h3>
+                            <p class="portfolio-card__description">Built a user-friendly platform for online courses with video lectures, quizzes, and progress tracking features.</p>
+                            <a href="#" class="portfolio-card__link">View Project <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <div class="text-center" style="margin-top: 60px;">
-                    <h2>Ready to Showcase Your Vision?</h2>
-                    <p>Let's build a stunning website that highlights your strengths and achieves your goals.</p>
-                    <a href="contact.html" class="btn">Let’s Build Yours Next</a>
-                </div>
+                <a href="contact.html" class="btn btn--primary">Discuss Your Project</a>
             </div>
         </section>
     </main>
 
     <!-- Footer Section -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Exotech Developers. All rights reserved.</p>
-            <div class="social-icons">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <div class="container footer__container">
+            <div class="footer__contact-info">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone-alt"></i> <a href="tel:+919510553160">+91 95105 53160</a></p>
+                <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/919510553160" target="_blank">WhatsApp Us</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@exotech.co.in">info@exotech.co.in</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> 603, Exotech Office, Surat, Gujarat, India</p>
+            </div>
+            <div class="footer__social-media">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer__qr-code">
+                <h3>Scan to Connect</h3>
+                <img src="https://placehold.co/120x120/0A192F/FFFFFF?text=QR+Code" alt="QR Code for Exotech Developers" class="footer__qr-image">
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <p>&copy; 2025 EXOTECH Developers. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // JavaScript for mobile navigation toggle
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Close nav menu when a link is clicked (for mobile)
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

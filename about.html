@@ -3,110 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Exotech Developers</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome for icons -->
+    <title>About Us - Exotech Developers | Crafting Tomorrow's Web</title>
+    <meta name="description" content="Learn more about Exotech Developers, our mission, vision, and the dedicated team behind our innovative web solutions.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://exotech.co.in/about.html">
+    <meta property="og:title" content="About Us - Exotech Developers | Crafting Tomorrow's Web">
+    <meta property="og:description" content="Learn more about Exotech Developers, our mission, vision, and the dedicated team behind our innovative web solutions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://exotech.co.in/about.html">
+    <meta property="og:image" content="https://exotech.co.in/social-share-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Us - Exotech Developers | Crafting Tomorrow's Web">
+    <meta name="twitter:description" content="Learn more about Exotech Developers, our mission, vision, and the dedicated team behind our innovative web solutions.">
+    <meta name="twitter:image" content="https://exotech.co.in/social-share-image.jpg">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;560;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- The specific styles for this page have been moved to style.css -->
 </head>
 <body>
     <!-- Header Section -->
     <header class="header">
-        <div class="container navbar">
-            <a href="index.html" class="logo">Exotech Developers</a>
-            <nav>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+        <div class="container header__container">
+            <div class="header__logo">
+                <a href="index.html">
+                    <img src="exotechlogo.png" alt="Exotech Developers Logo" class="header__logo-image">
+                </a>
+            </div>
+            <nav class="header__nav" id="main-nav">
+                <ul class="header__nav-list">
+                    <li><a href="index.html" class="header__nav-link">Home</a></li>
+                    <li><a href="about.html" class="header__nav-link active">About Us</a></li>
+                    <li><a href="services.html" class="header__nav-link">Services</a></li>
+                    <li><a href="pricing.html" class="header__nav-link">Pricing</a></li>
+                    <li><a href="contact.html" class="header__nav-link">Contact</a></li>
                 </ul>
             </nav>
-            <div class="hamburger" id="hamburger">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
+            <button class="header__hamburger" id="hamburger-menu" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
 
     <main>
-        <!-- About Us Section -->
-        <section class="section-padding about-section">
-            <div class="container">
-                <h1 class="text-center">About Exotech Developers</h1>
-                <div class="about-content" style="margin-top: 40px;">
-                    <div class="about-text">
-                        <h2>Our Story & What We Stand For</h2>
-                        <p>Exotech Developers was founded with a clear vision: to empower businesses of all sizes with a strong, effective, and affordable online presence. We saw a gap in the market for high-quality web development that didn't compromise on price or speed, and we set out to fill it.</p>
-                        <p>We believe that every business, regardless of its scale, deserves a professional and engaging website that truly represents its brand and helps it connect with its audience. Our commitment is to deliver digital solutions that are not just visually appealing, but also highly functional, user-friendly, and optimized for success.</p>
+        <!-- About Us Hero Section -->
+        <section class="about-hero-section">
+            <div class="container hero-section__container">
+                <h1 class="section__heading">Crafting Tomorrow's Web, Today.</h1>
+                <p class="section__subheading">
+                    We are Exotech Developers, where innovation meets dedication to build your digital future.
+                </p>
+            </div>
+        </section>
 
-                        <h3>Our Vision</h3>
-                        <p>To be the leading partner for businesses seeking innovative and impactful digital solutions, transforming their online presence into a powerful asset for growth.</p>
+        <!-- Our Story Section -->
+        <section class="section">
+            <div class="container section__container">
+                <h2 class="section__heading">Our Story: Building Digital Dreams</h2>
+                <p class="section__subheading">
+                    Exotech Developers began with a simple yet powerful idea: to make high-quality, impactful web solutions accessible to everyone. We believe that every business, regardless of size, deserves a powerful online presence that truly converts.
+                </p>
+                <p class="section__subheading">
+                    From humble beginnings, we've grown into a team passionate about blending cutting-edge technology with creative design. Our journey is fueled by the success of our clients and the ever-evolving landscape of the digital world. We're not just coders; we're problem-solvers, innovators, and partners committed to your growth.
+                </p>
+            </div>
+        </section>
 
-                        <h3>Our Mission</h3>
-                        <p>To craft exceptional, tailor-made websites and provide comprehensive digital services that empower our clients to achieve their business objectives, ensuring affordability, quality, and timely delivery.</p>
+        <!-- Mission & Vision Section -->
+        <section class="section section--light-gray">
+            <div class="container section__container">
+                <h2 class="section__heading">Our Mission & Vision</h2>
+                <p class="section__subheading">Guiding our every step, our core principles ensure we deliver excellence and drive your success.</p>
+                <div class="mission-vision-grid">
+                    <div class="mv-card">
+                        <div class="mv-card__icon"><i class="fas fa-bullseye"></i></div>
+                        <h3 class="mv-card__title">Our Mission</h3>
+                        <p class="mv-card__description">To empower businesses and individuals with innovative, user-centric, and highly effective web solutions that drive engagement and achieve measurable results.</p>
                     </div>
-                    <div class="about-image">
-                        <img src="https://placehold.co/600x400/38BDF8/0A192F?text=Our+Team" alt="Exotech Developers Team Meeting">
+                    <div class="mv-card">
+                        <div class="mv-card__icon"><i class="fas fa-eye"></i></div>
+                        <h3 class="mv-card__title">Our Vision</h3>
+                        <p class="mv-card__description">To be a leading force in digital transformation, recognized for our creativity, reliability, and unwavering commitment to client success and technological advancement.</p>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="about-content" style="margin-top: 60px;">
-                    <div class="about-image">
-                        <img src="https://placehold.co/600x400/0A192F/38BDF8?text=Unique+Approach" alt="Unique Web Development Approach">
+        <!-- Director's Message Section -->
+        <section class="section">
+            <div class="container section__container section__container--narrow">
+                <h2 class="section__heading">A Message From Our Director</h2>
+                <div class="director-message-card">
+                    <img src="yashvi_khatri.jpg" alt="Yashvi Khatri - Director" class="team-member-card__image">
+                    <h3 class="team-member-card__name">Yashvi Khatri</h3>
+                    <p class="team-member-card__role">Director, Exotech Developers</p>
+                    <p class="team-member-card__description">
+                        "At Exotech Developers, we believe that a website is more than just an online brochure—it's a powerful tool for growth. Our passion lies in crafting digital experiences that not only look stunning but also genuinely connect with your audience and convert visitors into loyal customers. We're committed to transparency, collaboration, and delivering solutions that exceed expectations. Let's build something extraordinary together."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="section section--light-gray">
+            <div class="container section__container">
+                <h2 class="section__heading">Why Choose Exotech?</h2>
+                <p class="section__subheading">We stand out by focusing on what truly matters: your success and a seamless development journey.</p>
+                <div class="why-choose-us-grid">
+                    <div class="wcu-card">
+                        <div class="wcu-card__icon"><i class="fas fa-magic"></i></div>
+                        <div class="wcu-card__content">
+                            <h3>Creative Innovation</h3>
+                            <p>We push boundaries to deliver unique and engaging designs that capture attention.</p>
+                        </div>
                     </div>
-                    <div class="about-text">
-                        <h2>What Makes Us Different?</h2>
-                        <p>In a crowded digital landscape, Exotech Developers stands out through our:</p>
-                        <ul>
-                            <li><strong>Client-Centric Approach:</strong> Your success is our priority. We listen, understand, and build solutions tailored precisely to your needs.</li>
-                            <li><strong>Transparency & Affordability:</strong> No hidden costs, just clear pricing and exceptional value for your investment.</li>
-                            <li><strong>Speed & Efficiency:</strong> We streamline our processes to deliver high-quality websites quickly, without cutting corners.</li>
-                            <li><strong>Comprehensive Support:</strong> From initial concept to ongoing maintenance, we provide end-to-end support, ensuring your peace of mind.</li>
-                            <li><strong>Modern Technology:</strong> We leverage the latest web technologies and best practices to ensure your site is robust, secure, and future-proof.</li>
-                        </ul>
+                    <div class="wcu-card">
+                        <div class="wcu-card__icon"><i class="fas fa-shield-alt"></i></div>
+                        <div class="wcu-card__content">
+                            <h3>Reliable Support</h3>
+                            <p>Our team is always here to provide ongoing support and ensure your site runs smoothly.</p>
+                        </div>
+                    </div>
+                    <div class="wcu-card">
+                        <div class="wcu-card__icon"><i class="fas fa-handshake"></i></div>
+                        <div class="wcu-card__content">
+                            <h3>Client-Centric Approach</h3>
+                            <p>Your vision is our blueprint. We collaborate closely to bring your ideas to life.</p>
+                        </div>
+                    </div>
+                    <div class="wcu-card">
+                        <div class="wcu-card__icon"><i class="fas fa-tachometer-alt"></i></div>
+                        <div class="wcu-card__content">
+                            <h3>Performance Optimized</h3>
+                            <p>We build fast, secure, and highly optimized websites for superior user experience.</p>
+                        </div>
+                    </div>
+                    <div class="wcu-card">
+                        <div class="wcu-card__icon"><i class="fas fa-dollar-sign"></i></div>
+                        <div class="wcu-card__content">
+                            <h3>Affordable Excellence</h3>
+                            <p>High-quality web solutions that fit your budget without compromising on impact.</p>
+                        </div>
+                    </div>
+                    <div class="wcu-card">
+                        <div class="wcu-card__icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="wcu-card__content">
+                            <h3>Growth Focused</h3>
+                            <p>Our strategies are designed to help your business grow and thrive online.</p>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="text-center" style="margin-top: 60px;">
-                    <h2>Ready to Build Your Digital Future?</h2>
-                    <p>Let's collaborate and create a powerful online presence that drives your business forward.</p>
-                    <a href="contact.html" class="btn">Let’s Build Your Website Together</a>
+        <!-- AI Generated Images Section -->
+        <section class="section ai-image-section">
+            <div class="container section__container">
+                <h2 class="section__heading">Where Creativity Meets Code</h2>
+                <p class="section__subheading">A glimpse into the innovative spirit that drives our designs and development.</p>
+                <div class="ai-image-container">
+                    <div class="ai-image-card">
+                        <img src="ai01.jpg" alt="AI Generated Design Concept 1">
+                    </div>
+                    <div class="ai-image-card">
+                        <img src="ai02.jpg" alt="AI Generated Design Concept 2">
+                    </div>
+                    <div class="ai-image-card">
+                        <img src="ai03.jpg" alt="AI Generated Design Concept 3">
+                    </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Full Team Section -->
+        <section class="section" id="team-section">
+            <div class="container section__container">
+                <h2 class="section__heading">Meet Our Full Team</h2>
+                <p class="section__subheading">
+                    Our diverse team brings together expertise in design, development, and project management to deliver exceptional results.
+                </p>
+                <div class="team-preview-grid">
+                    <div class="team-member-card">
+                        <img src="yashvi_khatri.jpg" alt="Yashvi Khatri - Director" class="team-member-card__image">
+                        <h3 class="team-member-card__name">Yashvi Khatri</h3>
+                        <p class="team-member-card__role">Director</p>
+                        <p class="team-member-card__description">A visionary leader with a strong technical foundation, Yashvi drives the company's innovation and growth, blending design thinking with digital strategy.</p>
+                    </div>
+                    <div class="team-member-card">
+                        <img src="Pankaj_Khatri.jpg" alt="Pankaj Khatri - Web Developer" class="team-member-card__image">
+                        <h3 class="team-member-card__name">Pankaj Khatri</h3>
+                        <p class="team-member-card__role">Web Developer</p>
+                        <p class="team-member-card__description">The coding powerhouse behind our projects, Pankaj transforms ideas into sleek, responsive, and functional websites that leave a lasting impression.</p>
+                    </div>
+                </div>
+                <a href="contact.html" class="btn btn--tertiary">Let’s Collaborate</a>
             </div>
         </section>
     </main>
 
     <!-- Footer Section -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Exotech Developers. All rights reserved.</p>
-            <div class="social-icons">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <div class="container footer__container">
+            <div class="footer__contact-info">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone-alt"></i> <a href="tel:+919510553160">+91 95105 53160</a></p>
+                <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/919510553160" target="_blank">WhatsApp Us</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@exotech.co.in">info@exotech.co.in</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> 603, Exotech Office, Surat, Gujarat, India</p>
+            </div>
+            <div class="footer__social-media">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer__qr-code">
+                <h3>Scan to Connect</h3>
+                <img src="https://placehold.co/120x120/1A324E/FFFFFF?text=QR+Code" alt="QR Code for Exotech Developers" class="footer__qr-image">
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <p>&copy; 2025 EXOTECH Developers. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // JavaScript for mobile navigation toggle
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Close nav menu when a link is clicked (for mobile)
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

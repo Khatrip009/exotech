@@ -3,178 +3,293 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exotech Developers - Your Digital Gateway to Success</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Exotech Developers - Crafting Tomorrow's Web | Home</title>
+    <meta name="description" content="Exotech Developers builds innovative, user-focused, and mobile-responsive websites. Your vision, transformed into code. Get a professional website for just ₹5,999/-.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://exotech.co.in/index.html">
+    <meta property="og:title" content="Exotech Developers - Crafting Tomorrow's Web | Home">
+    <meta property="og:description" content="Exotech Developers builds innovative, user-focused, and mobile-responsive websites. Your vision, transformed into code. Get a professional website for just ₹5,999/-.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://exotech.co.in/index.html">
+    <meta property="og:image" content="https://exotech.co.in/social-share-image.jpg"> <!-- Replace with an actual image URL -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Exotech Developers - Crafting Tomorrow's Web | Home">
+    <meta name="twitter:description" content="Exotech Developers - Crafting Tomorrow's Web | Home">
+    <meta name="twitter:image" content="https://exotech.co.in/social-share-image.jpg"> <!-- Replace with an actual image URL -->
+
+    <!-- Google Fonts: Poppins and Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;560;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- JSON-LD Structured Data for Organization and LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Exotech Developers",
+      "url": "https://exotech.co.in",
+      "logo": "https://exotech.co.in/logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-95105-53160",
+        "contactType": "customer service",
+        "email": "info@exotech.co.in"
+      },
+      "sameAs": [
+        "https://www.facebook.com/exotechdevelopers",
+        "https://www.instagram.com/exotechdevelopers",
+        "https://www.linkedin.com/company/exotechdevelopers"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Exotech Developers",
+      "image": "https://exotech.co.in/social-share-image.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "603, Exotech Office, Surat",
+        "addressLocality": "Surat",
+        "addressRegion": "Gujarat",
+        "postalCode": "395006",
+        "addressCountry": "IN"
+      },
+      "telephone": "+91-95105-53160",
+      "url": "https://exotech.co.in",
+      "priceRange": "₹5,999+",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Header Section -->
     <header class="header">
-        <div class="container navbar">
-            <a href="index.html" class="logo">Exotech Developers</a>
-            <nav>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+        <div class="container header__container">
+            <div class="header__logo">
+                <a href="index.html">
+                    <img src="exotechlogo.png" alt="Exotech Developers Logo" class="header__logo-image">
+                </a>
+            </div>
+            <nav class="header__nav" id="main-nav">
+                <ul class="header__nav-list">
+                    <li><a href="index.html" class="header__nav-link active">Home</a></li>
+                    <li><a href="about.html" class="header__nav-link">About Us</a></li>
+                    <li><a href="services.html" class="header__nav-link">Services</a></li>
+                    <li><a href="pricing.html" class="header__nav-link">Pricing</a></li>
+                    <li><a href="contact.html" class="header__nav-link">Contact</a></li>
                 </ul>
             </nav>
-            <div class="hamburger" id="hamburger">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
+            <button class="header__hamburger" id="hamburger-menu" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
 
     <main>
         <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <h1>Your Digital Gateway to Success</h1>
-                <p>Ready to transform your online presence? Let Exotech Developers build the perfect website for you, seamlessly and affordably.</p>
-                <a href="pricing.html#launch-offer" class="btn">Get Started for ₹5,999</a>
+        <section class="hero-section">
+            <div class="container hero-section__container">
+                <h1 class="hero-section__heading">We Don’t Just Build Websites — We Build Digital Experiences That Convert.</h1>
+                <p class="hero-section__subheading">Innovative. Creative. Reliable. Your Vision, Transformed into Code.</p>
+                <div class="hero-section__cta-buttons">
+                    <a href="contact.html" class="btn btn--primary">Let’s Get Started</a>
+                    <a href="services.html" class="btn btn--secondary">Our Services</a>
+                </div>
             </div>
         </section>
 
-        <!-- Welcome Section -->
-        <section class="section-padding about-section">
-            <div class="container text-center">
-                <h2>Welcome to Exotech Developers</h2>
-                <p>At Exotech Developers, we specialize in crafting stunning, high-performing websites and digital solutions that drive growth for businesses like yours. We're here to make your online vision a reality, seamlessly and affordably.</p>
+        <!-- About Preview Section -->
+        <section class="section section--light-gray about-section-layout">
+            <div class="container about-section-container">
+                <div class="about-content">
+                    <h2 class="section__heading">About Exotech Developers</h2>
+                    <p class="section__subheading">
+                        Exotech Developers is a dynamic web development company founded with a clear mission to help individuals and businesses establish a compelling digital presence through innovative, user-focused website solutions.
+                    </p>
+                    <a href="about.html" class="btn btn--tertiary">Learn More About Us</a>
+                </div>
+                <div class="about-image">
+                    <img src="laptop01.png" alt="Laptop with analytics" class="about-laptop-image">
+                </div>
             </div>
         </section>
 
-        <!-- Why Choose Us Section -->
-        <section class="section-padding why-choose-us">
-            <div class="container text-center">
-                <h2>Why Choose Exotech Developers?</h2>
-                <div class="benefits-grid">
-                    <div class="benefit-item">
-                        <i class="fas fa-hand-holding-usd"></i>
-                        <h3>Affordable Excellence</h3>
-                        <p>High-quality web development doesn't have to break the bank. Get premium results without the premium price tag.</p>
+        <!-- Our Services Section -->
+        <section class="section">
+            <div class="container section__container">
+                <h2 class="section__heading">Our Services</h2>
+                <p class="section__subheading">We provide end-to-end website solutions tailored to meet the unique needs of every business.</p>
+                <div class="services-content-wrapper">
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <div class="service-card__icon"><i class="fas fa-desktop"></i></div>
+                            <h3 class="service-card__title">Custom Website Development</h3>
+                            <p class="service-card__description">Responsive, visually appealing websites tailored to your brand, from one-pagers to multi-page business sites.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-card__icon"><i class="fas fa-shopping-cart"></i></div>
+                            <h3 class="service-card__title">E-Commerce Website Development</h3>
+                            <p class="service-card__description">Smooth, scalable online shopping experiences with product catalogs and secure payment gateways.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-card__icon"><i class="fas fa-user-tie"></i></div>
+                            <h3 class="service-card__title">Portfolio & Personal Branding Sites</h3>
+                            <p class="service-card__description">Showcase your work and services with clean, elegant digital portfolios for professionals and creatives.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-card__icon"><i class="fas fa-redo-alt"></i></div>
+                            <h3 class="service-card__title">Website Redesign & Modernization</h3>
+                            <p class="service-card__description">Refresh outdated websites, boost performance, and optimize for today's mobile users.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-card__icon"><i class="fas fa-server"></i></div>
+                            <h3 class="service-card__title">Domain, Hosting & Deployment</h3>
+                            <p class="service-card__description">Full support from domain registration to live deployment, getting your site up and running smoothly.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-card__icon"><i class="fas fa-cogs"></i></div>
+                            <h3 class="service-card__title">Dynamic Web Applications</h3>
+                            <p class="service-card__description">Interactive, database-driven platforms for businesses requiring real-time updates and smart features.</p>
+                        </div>
                     </div>
-                    <div class="benefit-item">
-                        <i class="fas fa-cogs"></i>
-                        <h3>Tailored Solutions</h3>
-                        <p>We build websites that perfectly fit your unique business needs and goals, ensuring a custom fit every time.</p>
+                    <div class="services-character">
+                        <img src="exoweb01.png" alt="Exotech Web Developer Character" onerror="this.onerror=null; this.src='https://placehold.co/200x200/1A324E/FFFFFF?text=Character';" >
                     </div>
-                    <div class="benefit-item">
-                        <i class="fas fa-rocket"></i>
-                        <h3>Fast Delivery</h3>
-                        <p>Get your professional website up and running quickly, often within 7 days, so you can start growing sooner.</p>
+                </div>
+                <a href="services.html" class="btn btn--primary">View All Services</a>
+            </div>
+        </section>
+
+        <!-- Our Process Section -->
+        <section class="section section--light-gray">
+            <div class="container section__container">
+                <h2 class="section__heading">Our Web Development Process</h2>
+                <p class="section__subheading">We keep it simple, transparent, and collaborative.</p>
+                <div class="process-grid">
+                    <div class="process-step">
+                        <div class="process-step__icon"><i class="fas fa-lightbulb"></i></div>
+                        <h3 class="process-step__title">Discover</h3>
+                        <p class="process-step__description">We understand your business, your audience, and your vision.</p>
                     </div>
-                    <div class="benefit-item">
-                        <i class="fas fa-headset"></i>
-                        <h3>Ongoing Support</h3>
-                        <p>From hosting to maintenance, we've got your back long after launch, providing continuous support and updates.</p>
+                    <div class="process-step">
+                        <div class="process-step__icon"><i class="fas fa-pencil-ruler"></i></div>
+                        <h3 class="process-step__title">Design</h3>
+                        <p class="process-step__description">We create stunning mockups and UI/UX layouts aligned with your brand.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-step__icon"><i class="fas fa-code"></i></div>
+                        <h3 class="process-step__title">Develop</h3>
+                        <p class="process-step__description">We code your site using cutting-edge, scalable technologies.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-step__icon"><i class="fas fa-rocket"></i></div>
+                        <h3 class="process-step__title">Deploy</h3>
+                        <p class="process-step__description">We launch your site live after thorough testing & feedback.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-step__icon"><i class="fas fa-headset"></i></div>
+                        <h3 class="process-step__title">Support</h3>
+                        <p class="process-step__description">We stay with you for updates, maintenance & growth.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Launch Offer Section -->
-        <section class="section-padding">
-            <div class="container text-center">
-                <h2>Our Special Launch Offer</h2>
-                <p>Kickstart your online journey with our incredible **Basic Website Package for just ₹5,999!** This includes:</p>
-                <ul style="list-style-type: disc; display: inline-block; text-align: left; margin-top: 20px;">
-                    <li>1–5 Pages</li>
-                    <li>Mobile Responsive Design</li>
-                    <li>Contact Form Integration</li>
-                    <li>1 Year Hosting & Domain</li>
-                    <li>7-Day Delivery</li>
-                </ul>
-                <p style="margin-top: 20px;">It's the perfect way to establish your professional online presence.</p>
-                <a href="pricing.html#launch-offer" class="btn">Learn More & Book Now</a>
+        <!-- Team Section Preview -->
+        <section class="section">
+            <div class="container section__container">
+                <h2 class="section__heading">Meet The Team</h2>
+                <p class="section__subheading">Together, we combine creativity, code, and coordination, delivering websites that don't just work, but wow.</p>
+                <div class="team-preview-grid">
+                    <div class="team-member-card">
+                        <img src="yashvi_khatri.jpg" alt="Yashvi Khatri - Director" class="team-member-card__image">
+                        <h3 class="team-member-card__name">Yashvi Khatri</h3>
+                        <p class="team-member-card__role">Director</p>
+                        <p class="team-member-card__description">A visionary leader blending design thinking with digital strategy.</p>
+                    </div>
+                    <div class="team-member-card">
+                        <img src="Pankaj_Khatri.jpg" alt="Pankaj Khatri - Web Developer" class="team-member-card__image">
+                        <h3 class="team-member-card__name">Pankaj Khatri</h3>
+                        <p class="team-member-card__role">Web Developer</p>
+                        <p class="team-member-card__description">The coding powerhouse transforming ideas into sleek, responsive websites.</p>
+                    </div>
+                </div>
+                <a href="about.html#team-section" class="btn btn--tertiary">View Full Team</a>
             </div>
         </section>
 
-        <!-- Core Services Section -->
-        <section class="section-padding services-section">
-            <div class="container text-center">
-                <h2>Our Core Services</h2>
-                <p>We offer a comprehensive suite of services designed to meet all your digital needs:</p>
-                <div class="services-grid">
-                    <div class="service-item">
-                        <i class="fas fa-file-alt"></i>
-                        <h3>Static Website Development</h3>
-                        <p>Simple, fast, and effective online presence for showcasing your business or portfolio.</p>
-                    </div>
-                    <div class="service-item">
-                        <i class="fas fa-code"></i>
-                        <h3>Dynamic Web Apps</h3>
-                        <p>Interactive solutions tailored for complex functionalities and user engagement.</p>
-                    </div>
-                    <div class="service-item">
-                        <i class="fas fa-shopping-cart"></i>
-                        <h3>E-Commerce Website</h3>
-                        <p>Powerful online stores to sell your products effortlessly, with secure payment gateways.</p>
-                    </div>
-                    <div class="service-item">
-                        <i class="fas fa-redo-alt"></i>
-                        <h3>Website Redesign & Optimization</h3>
-                        <p>Revamp and enhance your existing site for better performance, modern aesthetics, and improved user experience.</p>
-                    </div>
-                </div>
-                <div class="text-center" style="margin-top: 40px;">
-                    <a href="services.html" class="btn btn-secondary">View All Services</a>
-                    <a href="contact.html" class="btn">Get a Free Quote</a>
-                </div>
+        <!-- Let's Check the Best Option for You Section -->
+        <section class="section section--accent-background">
+            <div class="container section__container section__container--narrow">
+                <h2 class="section__heading section__heading--white">Let's Find the Best Option for You!</h2>
+                <p class="section__subheading section__subheading--white">
+                    Not sure which plan fits your needs? Take our quick quiz to discover the perfect web solution.
+                </p>
+                <a href="quiz.html" class="btn btn--white">Take the Quiz Now!</a>
             </div>
         </section>
 
-        <!-- Testimonials Preview Section -->
-        <section class="section-padding why-choose-us">
-            <div class="container text-center">
-                <h2>What Our Clients Say</h2>
-                <div class="testimonials-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
-                    <div class="testimonial-item" style="background-color: var(--white); padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                        <p>"Exotech Developers delivered a fantastic website for my business. It was fast, affordable, and exactly what I needed!"</p>
-                        <p><strong>– Priya S., Small Business Owner</strong></p>
-                    </div>
-                    <div class="testimonial-item" style="background-color: var(--white); padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                        <p>"Professional, responsive, and truly understood our vision. Highly recommend their services."</p>
-                        <p><strong>– Ankit R., E-commerce Entrepreneur</strong></p>
-                    </div>
-                </div>
+        <!-- Launch Offer Box -->
+        <section class="section section--accent-background">
+            <div class="container section__container section__container--narrow">
+                <h2 class="section__heading section__heading--white">Get a Professional Website for Just ₹5,999/-</h2>
+                <p class="section__subheading section__subheading--white">
+                    Get online with a stunning 1–5 page website including design, domain, hosting, and mobile optimization. No hidden charges. No tech headaches. Just results.
+                </p>
+                <a href="pricing.html" class="btn btn--white">View Launch Offer</a>
             </div>
         </section>
     </main>
 
     <!-- Footer Section -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Exotech Developers. All rights reserved.</p>
-            <div class="social-icons">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <div class="container footer__container">
+            <div class="footer__contact-info">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone-alt"></i> <a href="tel:+919510553160">+91 95105 53160</a></p>
+                <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/919510553160" target="_blank">WhatsApp Us</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@exotech.co.in">info@exotech.co.in</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> 603, Exotech Office, Surat, Gujarat, India</p>
+            </div>
+            <div class="footer__social-media">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer__qr-code">
+                <h3>Scan to Connect</h3>
+                <img src="https://placehold.co/120x120/1A324E/FFFFFF?text=QR+Code" alt="QR Code for Exotech Developers" class="footer__qr-image">
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <p>&copy; 2025 EXOTECH Developers. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // JavaScript for mobile navigation toggle
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Close nav menu when a link is clicked (for mobile)
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

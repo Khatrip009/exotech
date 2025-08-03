@@ -3,160 +3,515 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing - Exotech Developers</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome for icons -->
+    <title>Pricing & Offers - Exotech Developers | Affordable Web Solutions</title>
+    <meta name="description" content="Discover affordable web development pricing and our special launch offer for professional websites starting at just ₹5,999/-.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://exotech.co.in/pricing.html">
+    <meta property="og:title" content="Pricing & Offers - Exotech Developers | Affordable Web Solutions">
+    <meta property="og:description" content="Discover affordable web development pricing and our special launch offer for professional websites starting at just ₹5,999/-.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://exotech.co.in/pricing.html">
+    <meta property="og:image" content="https://exotech.co.in/social-share-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pricing & Offers - Exotech Developers | Affordable Web Solutions">
+    <meta name="twitter:description" content="Discover affordable web development pricing and our special launch offer for professional websites starting at just ₹5,999/-.">
+    <meta name="twitter:image" content="https://exotech.co.in/social-share-image.jpg">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;560;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles for pricing page */
+        .pricing-card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .pricing-card {
+            background-color: var(--color-white);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card--featured {
+            border-color: var(--color-electric-blue);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .pricing-card__header {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .pricing-card__title {
+            font-size: 1.8rem;
+            color: var(--color-dark-blue-teal); /* Changed color to match theme */
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .pricing-card__price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-electric-blue);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .pricing-card__price span {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--color-soft-black);
+        }
+
+        .pricing-card__features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: var(--spacing-xl);
+            flex-grow: 1;
+        }
+
+        .pricing-card__features li {
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-soft-black);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .pricing-card__features li i {
+            color: var(--color-electric-blue);
+            margin-right: var(--spacing-xs);
+        }
+
+        .pricing-card .btn {
+            width: 100%;
+        }
+
+        .conditions-apply {
+            font-size: 0.8rem;
+            color: var(--color-soft-black);
+            margin-top: var(--spacing-md);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Styles for the popup modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: var(--color-white);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+            text-align: left;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: var(--spacing-sm);
+            right: var(--spacing-sm);
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--color-soft-black);
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close-btn:hover {
+            color: var(--color-electric-blue);
+        }
+
+        .modal-content h3 {
+            color: var(--color-dark-blue-teal);
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+        }
+
+        .modal-form label {
+            display: block;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 500;
+            color: var(--color-soft-black);
+        }
+
+        .modal-form input[type="text"],
+        .modal-form input[type="email"],
+        .modal-form input[type="tel"],
+        .modal-form textarea {
+            width: 100%;
+            padding: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            border: 1px solid var(--color-light-gray);
+            border-radius: var(--border-radius);
+            font-family: var(--font-secondary);
+            font-size: 1rem;
+        }
+
+        .modal-form textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .modal-form .btn {
+            margin-top: var(--spacing-md);
+        }
+
+        .offer-code-display {
+            background-color: var(--color-light-gray);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            margin-top: var(--spacing-xl);
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-dark-blue-teal);
+            display: none; /* Hidden by default */
+        }
+
+        .offer-code-display span {
+            color: var(--color-electric-blue);
+            font-size: 1.3rem;
+        }
+
+        .success-message {
+            background-color: #d4edda; /* Light green */
+            color: #155724; /* Dark green */
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            margin-top: var(--spacing-md);
+            text-align: center;
+            display: none; /* Hidden by default */
+        }
+        .error-message {
+            background-color: #f8d7da; /* Light red */
+            color: #721c24; /* Dark red */
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            margin-top: var(--spacing-md);
+            text-align: center;
+            display: none; /* Hidden by default */
+        }
+    </style>
 </head>
 <body>
     <!-- Header Section -->
     <header class="header">
-        <div class="container navbar">
-            <a href="index.html" class="logo">Exotech Developers</a>
-            <nav>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+        <div class="container header__container">
+            <div class="header__logo">
+                <a href="index.html">
+                    <img src="exotechlogo.png" alt="Exotech Developers Logo" class="header__logo-image">
+                </a>
+            </div>
+            <nav class="header__nav" id="main-nav">
+                <ul class="header__nav-list">
+                    <li><a href="index.html" class="header__nav-link">Home</a></li>
+                    <li><a href="about.html" class="header__nav-link">About Us</a></li>
+                    <li><a href="services.html" class="header__nav-link">Services</a></li>
+                    
+                    <li><a href="pricing.html" class="header__nav-link active">Pricing</a></li>
+                    <li><a href="contact.html" class="header__nav-link">Contact</a></li>
                 </ul>
             </nav>
-            <div class="hamburger" id="hamburger">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
+            <button class="header__hamburger" id="hamburger-menu" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
 
     <main>
-        <!-- Pricing Section -->
-        <section class="section-padding pricing-section">
-            <div class="container">
-                <h1 class="text-center">Transparent Pricing & Flexible Plans</h1>
-                <p class="text-center" style="max-width: 800px; margin: 20px auto 40px;">Choose the perfect plan for your business needs. We offer clear, upfront pricing with no hidden fees.</p>
+        <!-- Pricing Hero Section -->
+        <section class="hero-section hero-section--small">
+            <div class="container hero-section__container">
+                <h1 class="hero-section__heading">Affordable Web Solutions for Every Business</h1>
+                <p class="hero-section__subheading">
+                    Get online with professional, high-quality websites designed to meet your needs and budget.
+                </p>
+            </div>
+        </section>
 
-                <div class="pricing-plans">
-                    <!-- Basic Website Package (Launch Offer) -->
-                    <div class="price-card featured" id="launch-offer">
-                        <h3>Basic Website Package</h3>
-                        <p class="price">₹5,999<span>/one-time</span></p>
-                        <ul>
-                            <li><i class="fas fa-check-circle" style="color: var(--accent-color);"></i> 1–5 Pages</li>
-                            <li><i class="fas fa-check-circle" style="color: var(--accent-color);"></i> Mobile Responsive Design</li>
-                            <li><i class="fas fa-check-circle" style="color: var(--accent-color);"></i> Contact Form</li>
-                            <li><i class="fas fa-check-circle" style="color: var(--accent-color);"></i> 1 Year Hosting & Domain</li>
-                            <li><i class="fas fa-check-circle" style="color: var(--accent-color);"></i> 7-Day Delivery</li>
-                            <li><i class="fas fa-check-circle" style="color: var(--accent-color);"></i> Basic SEO Setup</li>
+        <!-- Launch Offer Highlight -->
+        <section class="section section--accent-background">
+            <div class="container section__container section__container--narrow">
+                <h2 class="section__heading section__heading--white">Special Launch Offer!</h2>
+                <p class="section__subheading section__subheading--white">
+                    Get online with a stunning 1–5 page website including design, domain, hosting, and mobile optimization—all for just <span style="font-size: 1.5em; font-weight: 700;">₹5,999/-</span>. No hidden charges. No tech headaches. Just results.
+                </p>
+                <a href="#" class="btn btn--white" id="claimOfferBtn">Claim Your Offer Now!</a>
+            </div>
+        </section>
+
+        <!-- Tiered Packages Section -->
+        <section class="section section--light-gray">
+            <div class="container section__container">
+                <h2 class="section__heading">Our Standard Packages</h2>
+                <p class="section__subheading">
+                    We offer flexible packages to suit different business sizes and requirements. Contact us for a custom quote.
+                </p>
+                <div class="pricing-card-grid">
+                    <!-- Basic Package -->
+                    <div class="pricing-card">
+                        <div class="pricing-card__header">
+                            <h3 class="pricing-card__title">Basic Website</h3>
+                            <p class="pricing-card__price">₹8,999/-*<span>/one-time</span></p>
+                        </div>
+                        <ul class="pricing-card__features">
+                            <li><i class="fas fa-check-circle"></i> 1-3 Page Static Website</li>
+                            <li><i class="fas fa-check-circle"></i> Responsive Design</li>
+                            <li><i class="fas fa-check-circle"></i> Basic SEO Setup</li>
+                            <li><i class="fas fa-check-circle"></i> Contact Form</li>
+                            <li><i class="fas fa-check-circle"></i> 1 Year Domain & Hosting</li>
+                            <li><i class="fas fa-check-circle"></i> Limited Revisions</li>
                         </ul>
-                        <a href="contact.html?plan=basic" class="btn">Book Now</a>
+                        <a href="contact.html" class="btn btn--primary">Get Started</a>
                     </div>
 
-                    <!-- Standard Plan -->
-                    <div class="price-card">
-                        <h3>Standard Plan</h3>
-                        <p class="price">₹14,999<span>/one-time</span></p>
-                        <ul>
-                            <li><i class="fas fa-check-circle" style="color: var(--accent-color);"></i> Up to 10 Pages</li>
-                            <li><i class="fas fa-check-circle" style="color: var(--accent-color);"></i> Advanced Responsive Design</li>
-                            <li><i class="fas fa-check-circle" style="color: var(--accent-color);"></i> Custom Contact Forms</li>
-                            <li><i class="fas fa-check-circle" style="color: var(--accent-color);"></i> 1 Year Premium Hosting & Domain</li>
-                            <li><i class="fas fa-check-circle" style="color: var(--accent-color);"></i> 14-Day Delivery</li>
-                            <li><i class="fas fa-check-circle" style="color: var(--accent-color);"></i> Google Analytics Integration</li>
-                            <li><i class="fas fa-check-circle" style="color: var(--accent-color);"></i> Basic Content Upload</li>
+                    <!-- Standard Package (Featured) -->
+                    <div class="pricing-card pricing-card--featured">
+                        <div class="pricing-card__header">
+                            <h3 class="pricing-card__title">Standard Business Website</h3>
+                            <p class="pricing-card__price">₹14,999/-*<span>/one-time</span></p>
+                        </div>
+                        <ul class="pricing-card__features">
+                            <li><i class="fas fa-check-circle"></i> 5-10 Page Dynamic Website</li>
+                            <li><i class="fas fa-check-circle"></i> Advanced Responsive Design</li>
+                            <li><i class="fas fa-check-circle"></i> On-Page SEO Optimization</li>
+                            <li><i class="fas fa-check-circle"></i> Blog Integration</li>
+                            <li><i class="fas fa-check-circle"></i> 1 Year Domain & Premium Hosting</li>
+                            <li><i class="fas fa-check-circle"></i> 12 Revisions Available</li>
+                            <li><i class="fas fa-check-circle"></i> Basic Analytics Setup</li>
                         </ul>
-                        <a href="contact.html?plan=standard" class="btn btn-secondary">Get Started</a>
+                        <a href="contact.html" class="btn btn--primary">Choose Plan</a>
                     </div>
 
-                    <!-- Premium Plan -->
-                    <div class="price-card">
-                        <h3>Premium Plan</h3>
-                        <p class="price">₹29,999<span>/one-time</span></p>
-                        <ul>
-                            <li><i class="fas fa-check-circle" style="color: var(--accent-color);"></i> Unlimited Pages</li>
-                            <li><i class="fas fa-check-circle" style="color: var(--accent-color);"></i> Bespoke UI/UX Design</li>
-                            <li><i class="fas fa-check-circle" style="color: var(--accent-color);"></i> Dynamic Features (Blogs, Galleries)</li>
-                            <li><i class="fas fa-check-circle" style="color: var(--accent-color);"></i> 1 Year Enterprise Hosting & Domain</li>
-                            <li><i class="fas fa-check-circle" style="color: var(--accent-color);"></i> Priority Support</li>
-                            <li><i class="fas fa-check-circle" style="color: var(--accent-color);"></i> Advanced SEO Optimization</li>
-                            <li><i class="fas fa-check-circle" style="color: var(--accent-color);"></i> E-commerce Integration (Optional)</li>
+                    <!-- Premium Package -->
+                    <div class="pricing-card">
+                        <div class="pricing-card__header">
+                            <h3 class="pricing-card__title">E-commerce / Custom App</h3>
+                            <p class="pricing-card__price">₹34,999/-*<span>/one-time</span></p>
+                        </div>
+                        <ul class="pricing-card__features">
+                            <li><i class="fas fa-check-circle"></i> Custom E-commerce Store / Web App</li>
+                            <li><i class="fas fa-check-circle"></i> UI/UX Design</li>
+                            <li><i class="fas fa-check-circle"></i> Full SEO Strategy & Implementation</li>
+                            <li><i class="fas fa-check-circle"></i> Payment Gateway Integration</li>
+                            <li><i class="fas fa-check-circle"></i> CRM/ERP Integration</li>
+                            <li><i class="fas fa-check-circle"></i> 1 Year Domain & Dedicated Hosting</li>
+                            <li><i class="fas fa-check-circle"></i> Ongoing Support & Maintenance</li>
+                            <li><i class="fas fa-check-circle"></i> Advanced Analytics & Reporting</li>
                         </ul>
-                        <a href="contact.html?plan=premium" class="btn btn-secondary">Enquire Now</a>
+                        <a href="contact.html" class="btn btn--primary">Enquire Now</a>
                     </div>
                 </div>
-
-                <!-- Add-ons Section -->
-                <section class="add-ons-section">
-                    <h2 class="text-center">Enhance Your Website with Our Add-ons</h2>
-                    <p class="text-center" style="max-width: 700px; margin: 20px auto 40px;">Customize your package with these optional services to get exactly what your business needs.</p>
-                    <div class="add-ons-grid">
-                        <div class="add-on-item">
-                            <h4>Logo Design</h4>
-                            <p>Professional logo creation to establish your brand identity. (Price on quote)</p>
-                        </div>
-                        <div class="add-on-item">
-                            <h4>Advanced SEO Package</h4>
-                            <p>In-depth keyword research, on-page optimization, and competitor analysis. (Price on quote)</p>
-                        </div>
-                        <div class="add-on-item">
-                            <h4>Monthly Maintenance Plan</h4>
-                            <p>Regular updates, backups, security checks, and minor content changes. (Starting at ₹999/month)</p>
-                        </div>
-                        <div class="add-on-item">
-                            <h4>Content Writing</h4>
-                            <p>High-quality, engaging content for your website pages and blog. (Price per page/word)</p>
-                        </div>
-                        <div class="add-on-item">
-                            <h4>Social Media Integration</h4>
-                            <p>Seamlessly connect your website with your social media profiles. (Included in most plans)</p>
-                        </div>
-                        <div class="add-on-item">
-                            <h4>Custom Feature Development</h4>
-                            <p>Need something unique? We can build custom functionalities for your specific needs. (Price on quote)</p>
-                        </div>
-                    </div>
-                </section>
-
-                <div class="text-center" style="margin-top: 60px;">
-                    <h2>Payment Modes</h2>
-                    <p>We accept various secure payment methods for your convenience:</p>
-                    <p>Bank Transfer (NEFT/RTGS), UPI (Google Pay, PhonePe, Paytm), Debit/Credit Cards (via secure payment gateway).</p>
-                    <p style="margin-top: 30px;">Have questions about pricing or need a custom quote?</p>
-                    <a href="contact.html" class="btn">Get a Custom Quote</a>
-                </div>
+                <p class="conditions-apply">*Conditions apply for limited functions only.</p>
             </div>
         </section>
     </main>
 
     <!-- Footer Section -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Exotech Developers. All rights reserved.</p>
-            <div class="social-icons">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <div class="container footer__container">
+            <div class="footer__contact-info">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone-alt"></i> <a href="tel:+919510553160">+91 95105 53160</a></p>
+                <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/919510553160" target="_blank">WhatsApp Us</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@exotech.co.in">info@exotech.co.in</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> 603, Exotech Office, Surat, Gujarat, India</p>
+            </div>
+            <div class="footer__social-media">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer__qr-code">
+                <h3>Scan to Connect</h3>
+                <img src="https://placehold.co/120x120/1A324E/FFFFFF?text=QR+Code" alt="QR Code for Exotech Developers" class="footer__qr-image">
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <p>&copy; 2025 EXOTECH Developers. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // JavaScript for mobile navigation toggle
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
+    <!-- Popup Modal for Offer Claim -->
+    <div class="modal-overlay" id="offerModalOverlay">
+        <div class="modal-content">
+            <button class="modal-close-btn" id="closeModalBtn">&times;</button>
+            <h3>Claim Your Special Offer!</h3>
+            <form class="modal-form" id="offerClaimForm" action="https://formspree.io/f/mqalddrg" method="POST">
+                <label for="modalName">Name:</label>
+                <input type="text" id="modalName" name="name" required>
 
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+                <label for="modalEmail">Email:</label>
+                <input type="email" id="modalEmail" name="email" required>
+
+                <label for="modalPhone">Phone:</label>
+                <input type="tel" id="modalPhone" name="phone">
+
+                <label for="modalMessage">Message (Optional):</label>
+                <textarea id="modalMessage" name="message" rows="4"></textarea>
+
+                <!-- Hidden input for the generated offer code -->
+                <input type="hidden" id="hiddenOfferCode" name="offer_code">
+
+                <button type="submit" class="btn btn--primary">Submit & Get Offer Code</button>
+            </form>
+            <div class="offer-code-display" id="offerCodeDisplay">
+                Your Offer Code: <span id="generatedOfferCode"></span>
+                <p style="font-size: 0.8em; margin-top: 10px;">Please save this code for your discount.</p>
+            </div>
+            <div class="success-message" id="successMessage">
+                Thank you! Your details and offer code have been sent. We'll be in touch shortly.
+            </div>
+            <div class="error-message" id="errorMessage">
+                There was an error submitting your request. Please try again later.
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // JavaScript for the offer popup form
+        const claimOfferBtn = document.getElementById('claimOfferBtn');
+        const offerModalOverlay = document.getElementById('offerModalOverlay');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const offerClaimForm = document.getElementById('offerClaimForm');
+        const offerCodeDisplay = document.getElementById('offerCodeDisplay');
+        const generatedOfferCodeSpan = document.getElementById('generatedOfferCode');
+        const hiddenOfferCodeInput = document.getElementById('hiddenOfferCode'); // New: Hidden input for offer code
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+
+        // Function to open the modal
+        function openOfferModal(event) {
+            event.preventDefault(); // Prevent default link behavior
+            offerModalOverlay.classList.add('active');
+            // Reset form and messages when opening
+            offerClaimForm.reset();
+            offerClaimForm.style.display = 'block'; // Ensure form is visible
+            offerCodeDisplay.style.display = 'none';
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+        }
+
+        // Function to close the modal
+        function closeOfferModal() {
+            offerModalOverlay.classList.remove('active');
+        }
+
+        // Generate a simple unique offer code
+        function generateOfferCode() {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            let result = 'EXO-';
+            for (let i = 0; i < 6; i++) {
+                result += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return result;
+        }
+
+        // Event listener for the "Claim Your Offer Now!" button
+        claimOfferBtn.addEventListener('click', openOfferModal);
+
+        // Event listener for the close button
+        closeModalBtn.addEventListener('click', closeOfferModal);
+
+        // Event listener for clicking outside the modal content to close it
+        offerModalOverlay.addEventListener('click', (event) => {
+            if (event.target === offerModalOverlay) {
+                closeOfferModal();
+            }
         });
 
-        // Close nav menu when a link is clicked (for mobile)
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
+        // Handle form submission
+        offerClaimForm.addEventListener('submit', async function(event) {
+            event.preventDefault(); // Prevent default form submission to handle with fetch
+
+            const offerCode = generateOfferCode();
+            hiddenOfferCodeInput.value = offerCode; // Set the value of the hidden input
+
+            // Display the generated offer code to the user immediately
+            generatedOfferCodeSpan.textContent = offerCode;
+            offerCodeDisplay.style.display = 'block';
+
+            // Prepare form data for Formspree
+            const formData = new FormData(offerClaimForm);
+
+            try {
+                const response = await fetch(offerClaimForm.action, {
+                    method: 'POST',
+                    body: formData, // Formspree expects FormData directly
+                    headers: {
+                        'Accept': 'application/json' // Important for AJAX submission
+                    }
+                });
+
+                if (response.ok) {
+                    // Formspree submission successful
+                    offerClaimForm.style.display = 'none'; // Hide the form
+                    successMessage.style.display = 'block'; // Show success message
+                    errorMessage.style.display = 'none'; // Hide any error message
+                } else {
+                    // Formspree submission failed (e.g., validation error, rate limit)
+                    const errorData = await response.json();
+                    console.error('Formspree submission error:', errorData);
+                    errorMessage.textContent = 'Submission failed. Please check your input and try again.';
+                    errorMessage.style.display = 'block';
+                    successMessage.style.display = 'none';
+                }
+            } catch (error) {
+                console.error('Network error during form submission:', error);
+                errorMessage.textContent = 'A network error occurred. Please check your internet connection and try again.';
+                errorMessage.style.display = 'block';
+                successMessage.style.display = 'none';
+            }
         });
     </script>
 </body>
