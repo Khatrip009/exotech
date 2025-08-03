@@ -61,6 +61,13 @@ body {
     background-blend-mode: multiply;
 }
 
+/* Ensure all images are responsive by default */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Removes extra space below images */
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -991,13 +998,13 @@ p {
         padding: 0 var(--spacing-sm);
     }
     .section {
-        padding: var(--spacing-xl) 0;
+        padding: var(--spacing-lg) 0; /* Reduced padding for smaller screens */
     }
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.8rem; }
-    h3 { font-size: 1.5rem; }
+    h1 { font-size: 1.8rem; } /* Adjusted for smaller mobile screens */
+    h2 { font-size: 1.6rem; } /* Adjusted for smaller mobile screens */
+    h3 { font-size: 1.3rem; } /* Adjusted for smaller mobile screens */
     .section__subheading {
-        font-size: 1rem;
+        font-size: 0.95rem; /* Adjusted for smaller mobile screens */
         margin-bottom: var(--spacing-lg);
     }
 
@@ -1051,14 +1058,15 @@ p {
         padding: var(--spacing-xl) 0;
     }
     .hero-section__heading {
-        font-size: 2.2rem;
+        font-size: 2rem; /* Adjusted for smaller mobile screens */
     }
     .hero-section__subheading {
-        font-size: 1.1rem;
+        font-size: 1rem; /* Adjusted for smaller mobile screens */
     }
     .hero-section__cta-buttons .btn {
         width: 80%; /* Make buttons wider on mobile */
         margin: var(--spacing-xs) 0; /* Stack buttons */
+        margin-left: 0; /* Override default margin-left for stacked buttons */
     }
 
     /* About Section */
@@ -1081,6 +1089,9 @@ p {
         grid-template-columns: 1fr; /* Single column */
         max-width: 100%;
     }
+    .service-card {
+        padding: var(--spacing-lg); /* Reduced padding for mobile service cards */
+    }
     .services-character {
         width: 150px; /* Smaller character on mobile */
         margin-top: var(--spacing-lg); /* Add space above character */
@@ -1102,10 +1113,10 @@ p {
         min-height: 40vh;
     }
     .about-hero-section .section__heading {
-        font-size: 2.5rem;
+        font-size: 2.2rem; /* Adjusted for smaller mobile screens */
     }
     .about-hero-section .section__subheading {
-        font-size: 1rem;
+        font-size: 0.95rem; /* Adjusted for smaller mobile screens */
     }
     .mission-vision-grid,
     .why-choose-us-grid,
@@ -1116,27 +1127,23 @@ p {
         width: 100%;
         max-width: 350px;
         margin: 0 auto;
+        height: auto; /* Allow height to adjust with aspect ratio */
+    }
+    .director-message-card {
+        padding: var(--spacing-xl); /* Adjusted padding for mobile */
     }
 
-    /* Quiz.html specific adjustments */
-    .quiz-container {
-        padding: var(--spacing-lg);
-    }
-    .quiz-title {
-        font-size: 2rem;
-    }
-    .question-text {
-        font-size: 1.4rem;
-    }
-    .quiz-option-label {
-        padding: var(--spacing-sm);
-        font-size: 0.95rem;
-    }
-    .quiz-navigation {
+    /* Contact.html specific adjustments */
+    .contact-content {
         flex-direction: column;
     }
-    .solution-section h2 {
-        font-size: 2rem;
+    .contact-form-container,
+    .contact-info-details {
+        width: 100%;
+        min-width: unset; /* Remove min-width constraint */
+    }
+    .map-container {
+        height: 300px; /* Adjusted map height for mobile */
     }
 }
 
