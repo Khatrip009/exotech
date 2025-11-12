@@ -1,409 +1,238 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Pandit Pankaj Khatri - Digital vCard</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --primary: #740d94;
-      --primary-dark: #4d0f76;
-      --secondary: #d4af37;
-      --accent:#9e08b2;
-      --light:#f8f0fd;
-      --dark:#33134e;
-      --text:#1e293b;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Exotech Developers | Crafting Tomorrow's Web</title>
+    <meta name="description" content="Learn more about Exotech Developers, our mission, vision, and the dedicated team behind our innovative web solutions.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://exotech.co.in/about.html">
+    <meta property="og:title" content="About Us - Exotech Developers | Crafting Tomorrow's Web">
+    <meta property="og:description" content="Learn more about Exotech Developers, our mission, vision, and the dedicated team behind our innovative web solutions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://exotech.co.in/about.html">
+    <meta property="og:image" content="https://exotech.co.in/social-share-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Us - Exotech Developers | Crafting Tomorrow's Web">
+    <meta name="twitter:description" content="Learn more about Exotech Developers, our mission, vision, and the dedicated team behind our innovative web solutions.">
+    <meta name="twitter:image" content="https://exotech.co.in/social-share-image.jpg">
 
-      --container-max: 1100px;
-      --gap: clamp(16px, 2.2vw, 30px);
-      --pad: clamp(16px, 2.6vw, 50px);
-      --radius: 18px;
-      --shadow: 0 25px 50px -12px rgba(0,0,0,0.18);
-    }
-
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
-    body{
-      font-family:'Poppins',sans-serif;
-      background:linear-gradient(135deg,#f0fdfa 0%,#e0f2fe 100%);
-      color:var(--text);
-      display:flex;
-      /* important: don't vertically center - use start so top is visible on small viewports */
-      align-items:flex-start;
-      justify-content:center;
-      padding:env(safe-area-inset-top,20px) env(safe-area-inset-right,20px) env(safe-area-inset-bottom,20px);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      min-height:100vh;
-    }
-
-    .container{
-      width:100%;
-      max-width:var(--container-max);
-      background:white;
-      border-radius:calc(var(--radius) + 6px);
-      box-shadow:var(--shadow);
-      /* allow decorative elements to overflow instead of being clipped */
-      overflow:visible;
-      display:grid;
-      grid-template-columns: 1fr 1.3fr;
-      gap:var(--gap);
-      align-items:stretch;
-      margin: clamp(10px, 4vw, 28px) auto; /* vertical margin so card isn't flush against top */
-    }
-
-    @media (max-width: 980px){
-      .container{grid-template-columns: 1fr; gap:calc(var(--gap) / 1.25)}
-    }
-
-    .left-panel{
-      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-      padding: clamp(20px, 4vw, 36px);
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      text-align:center;
-      position:relative;
-      min-height:300px;
-    }
-    .left-panel::before,
-    .left-panel::after{
-      content:"";
-      position:absolute;
-      border-radius:50%;
-      background:rgba(255,255,255,0.08);
-      z-index:0;
-      pointer-events:none;
-    }
-    /* reduced offsets so top decorations don't push content outside viewport */
-    .left-panel::before{ width:calc(180px + 6vw); height:calc(180px + 6vw); top:-40px; right:-40px; }
-    .left-panel::after{ width:calc(120px + 4vw); height:calc(120px + 4vw); bottom:-30px; left:-30px; }
-
-    .profile-img{
-      width: clamp(110px, 20vw, 180px);
-      height: clamp(110px, 20vw, 180px);
-      border-radius:50%;
-      border: 4px solid rgba(255,255,255,0.28);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      overflow:hidden;
-      background:linear-gradient(45deg,#550f76,#9008b2);
-      z-index:2;
-      flex-shrink:0;
-    }
-    .profile-img img{width:100%;height:100%;object-fit:cover;display:block}
-
-    .name{
-      font-family:'Montserrat',sans-serif;
-      font-size: clamp(20px, 3.2vw, 32px);
-      font-weight:700;
-      color:white;
-      margin-top:12px;
-      z-index:2;
-    }
-    .title{
-      font-size: clamp(13px, 2.4vw, 18px);
-      color:rgba(255,255,255,0.92);
-      margin-top:6px;
-      margin-bottom:12px;
-      z-index:2;
-    }
-
-    .company{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      background:rgba(255,255,255,0.12);
-      padding:8px 18px;
-      border-radius:999px;
-      backdrop-filter: blur(4px);
-      z-index:2;
-      margin-bottom:12px;
-      font-weight:600;
-      color:white;
-      font-size: clamp(13px,2vw,18px);
-    }
-    .company-logo{ width:38px; height:38px; background:white; border-radius:8px; display:flex; align-items:center; justify-content:center }
-    .company-logo i{ color:var(--primary); font-size:18px }
-
-    .qrcode-container{
-      background:white;
-      padding:14px;
-      border-radius:14px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      margin-top:12px;
-      z-index:2;
-      width: clamp(160px, 40%, 240px);
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap:10px;
-    }
-    .qrcode{
-      width:100%;
-      padding-top:100%;
-      position:relative;
-      border-radius:8px;
-      background:#f3f4f6;
-      overflow:hidden;
-    }
-    .qrcode-pattern{ position:absolute; inset:0; opacity:0.12; background:
-        linear-gradient(45deg, transparent 48%, var(--primary) 48%, var(--primary) 52%, transparent 52%),
-        linear-gradient(-45deg, transparent 48%, var(--primary) 48%, var(--primary) 52%, transparent 52%),
-        radial-gradient(circle at center, var(--accent) 10%, transparent 10%); }
-    .qrcode-center{
-      position:absolute;
-      left:50%;
-      top:50%;
-      transform:translate(-50%,-50%);
-      width: clamp(40px, 10vw, 56px);
-      height: clamp(40px, 10vw, 56px);
-      border-radius:10px;
-      background:var(--primary);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      z-index:2;
-    }
-    .qrcode-center img{ width:70%; height:70%; object-fit:contain; display:block; filter:brightness(1.15) }
-
-    .scan-text{ font-size:clamp(12px,1.6vw,14px); color:var(--text); text-align:center; opacity:0.95 }
-
-    .vcard-btn{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      margin-top:12px;
-      background:var(--secondary);
-      color:var(--dark);
-      font-weight:700;
-      padding:10px 20px;
-      border-radius:999px;
-      text-decoration:none;
-      transition: transform .18s ease, box-shadow .18s ease;
-      box-shadow: 0 6px 18px rgba(212,175,55,0.22);
-      z-index:2;
-      cursor:pointer;
-      border:0;
-      font-size:clamp(13px,1.8vw,15px);
-    }
-    .vcard-btn:active{ transform:translateY(1px) }
-    .vcard-btn:hover{ transform:translateY(-4px); box-shadow:0 10px 26px rgba(212,175,55,0.28) }
-
-    .watermark{ position:absolute; bottom:12px; right:12px; font-size:12px; color:rgba(255,255,255,0.45); z-index:2; }
-
-    .right-panel{
-      padding: clamp(18px, 4vw, 50px);
-      display:flex;
-      flex-direction:column;
-    }
-    .panel-title{
-      font-family:'Montserrat',sans-serif;
-      font-size: clamp(22px, 3.2vw, 32px);
-      color:var(--primary);
-      font-weight:700;
-      margin-bottom:6px;
-      position:relative;
-      display:inline-block;
-    }
-    .panel-title::after{
-      content:"";
-      position:absolute;
-      left:0; bottom:-10px;
-      width:56px; height:4px;
-      background:var(--secondary); border-radius:3px;
-    }
-    .subtitle{ font-size:clamp(13px,2vw,18px); color:var(--text); opacity:0.85; margin-bottom:18px }
-
-    .contact-info{
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: clamp(12px, 2.2vw, 24px);
-      margin-bottom:20px;
-    }
-    .contact-item{ display:flex; gap:12px; align-items:flex-start }
-    .contact-icon{
-      min-width:48px; min-height:48px; border-radius:10px;
-      background:var(--light); display:flex; align-items:center; justify-content:center; flex-shrink:0;
-    }
-    .contact-icon i{ font-size:18px; color:var(--primary) }
-    .contact-details h3{ font-size:14px; font-weight:700; margin-bottom:4px }
-    .contact-details p{ font-size:14px; color:var(--text); opacity:0.95 }
-    .contact-details a{ color:var(--primary); text-decoration:none }
-    .contact-details a:hover{ color:var(--primary-dark); text-decoration:underline }
-
-    @media (max-width:600px){
-      .contact-info{ grid-template-columns:1fr; }
-      .qrcode-container{ width:clamp(160px, 42%, 220px) }
-      .left-panel{ padding:18px }
-      .right-panel{ padding:18px }
-      .vcard-btn{ width:100%; justify-content:center }
-      /* make sure the entire top area has breathing room on very short screens */
-      .container{ margin-top: calc(env(safe-area-inset-top, 12px) + 8px) }
-    }
-
-    .bio-section{
-      background:var(--light); padding:14px; border-radius:12px; margin-bottom:18px;
-    }
-    .bio-section h3{ font-size:16px; color:var(--primary-dark); margin-bottom:10px; display:flex; gap:8px; align-items:center }
-    .bio-text{ font-size:14px; line-height:1.6; color:var(--text); opacity:0.95 }
-
-    .social-links{ display:flex; gap:10px; margin-top:10px; flex-wrap:wrap }
-    .social-link{
-      display:inline-flex; align-items:center; justify-content:center;
-      width:44px;height:44px;border-radius:10px;background:var(--light);
-      color:var(--primary); text-decoration:none; font-size:16px; transition:transform .16s ease;
-    }
-    .social-link:hover{ transform:translateY(-4px); background:var(--primary); color:#fff }
-
-    .signature{ margin-top:auto; padding-top:16px; border-top:2px dashed rgba(0,0,0,0.03); display:flex; flex-direction:column; gap:8px; align-items:flex-start }
-    .signature p{ font-size:13px; color:var(--text); opacity:0.75 }
-    .signature-img svg{ display:block; height:40px; width:auto }
-
-    .sr-only{ position:absolute!important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0 }
-
-  </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;560;700&amp;family=Poppins:wght@400;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- The specific styles for this page have been moved to style.css -->
 </head>
 <body>
-  <div class="container" role="main" aria-label="Digital vCard for Pandit Pankaj Khatri">
-    <aside class="left-panel" aria-labelledby="vcard-name">
-      <div class="profile-img" aria-hidden="false">
-        <img src="Pankaj_Khatri.jpg" alt="Photo of Pandit Pankaj Khatri">
-      </div>
-
-      <h1 id="vcard-name" class="name">Pandit Pankaj Khatri</h1>
-      <p class="title">Senior Developer | DataBase Management and Analyst</p>
-
-      <div class="company" aria-hidden="false">
-        <div class="company-logo" aria-hidden="true">
-          <i class="fas fa-leaf" aria-hidden="true"></i>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container header__container">
+            <div class="header__logo">
+                <a href="index.html">
+                    <img src="exotechlogo.png" alt="Exotech Developers Logo" class="header__logo-image">
+                </a>
+            </div>
+            <nav class="header__nav" id="main-nav">
+                <ul class="header__nav-list">
+                    <li><a href="index.html" class="header__nav-link">Home</a></li>
+                    <li><a href="about.html" class="header__nav-link active">About Us</a></li>
+                    <li><a href="services.html" class="header__nav-link">Services</a></li>
+                    <li><a href="pricing.html" class="header__nav-link">Pricing</a></li>
+                    <li><a href="contact.html" class="header__nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="header__hamburger" id="hamburger-menu" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-        <div class="company-name">Exotech Developers</div>
-      </div>
+    </header>
 
-      <div class="qrcode-container" aria-label="QR code to online profile">
-        <div class="qrcode" role="button" tabindex="0" aria-pressed="false" title="Open online profile (opens new tab)">
-          <div class="qrcode-pattern" aria-hidden="true"></div>
-          <div class="qrcode-center" aria-hidden="true">
-            <img src="QR_Code.png" alt="QR code center logo">
-          </div>
+    <main>
+        <!-- About Us Hero Section -->
+        <section class="about-hero-section">
+            <div class="container hero-section__container">
+                <h1 class="section__heading">Crafting Tomorrow's Web, Today.</h1>
+                <p class="section__subheading">
+                    We are Exotech Developers, where innovation meets dedication to build your digital future.
+                </p>
+            </div>
+        </section>
+
+        <!-- Our Story Section -->
+        <section class="section animate-in">
+            <div class="container section__container">
+                <h2 class="section__heading">Our Story: Building Digital Dreams</h2>
+                <p class="section__subheading">
+                    Exotech Developers began with a simple yet powerful idea: to make high-quality, impactful web solutions accessible to everyone. We believe that every business, regardless of size, deserves a powerful online presence that truly converts.
+                </p>
+                <p class="section__subheading">
+                    From humble beginnings, we've grown into a team passionate about blending cutting-edge technology with creative design. Our journey is fueled by the success of our clients and the ever-evolving landscape of the digital world. We're not just coders; we're problem-solvers, innovators, and partners committed to your growth.
+                </p>
+            </div>
+        </section>
+
+        <!-- Mission & Vision Section -->
+        <section class="section section--light-gray animate-in">
+            <div class="container section__container">
+                <h2 class="section__heading">Our Mission &amp; Vision</h2>
+                <p class="section__subheading">Guiding our every step, our core principles ensure we deliver excellence and drive your success.</p>
+                <div class="mission-vision-grid">
+                    <div class="mv-card">
+                        <div class="mv-card__icon"><i class="fas fa-bullseye"></i></div>
+                        <h3 class="mv-card__title">Our Mission</h3>
+                        <p class="mv-card__description">To empower businesses and individuals with innovative, user-centric, and highly effective web solutions that drive engagement and achieve measurable results.</p>
+                    </div>
+                    <div class="mv-card">
+                        <div class="mv-card__icon"><i class="fas fa-eye"></i></div>
+                        <h3 class="mv-card__title">Our Vision</h3>
+                        <p class="mv-card__description">To be a leading force in digital transformation, recognized for our creativity, reliability, and unwavering commitment to client success and technological advancement.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Director's Message Section -->
+        <section class="section">
+            <div class="container section__container section__container--narrow">
+                <h2 class="section__heading">A Message From Our Director</h2>
+                <div class="director-message-card">
+                    <img src="yashvi_khatri.jpg" alt="Yashvi Khatri - Director" class="team-member-card__image">
+                    <h3 class="team-member-card__name">Yashvi Khatri</h3>
+                    <p class="team-member-card__role">Director, Exotech Developers</p>
+                    <p class="team-member-card__description">
+                        "At Exotech Developers, we believe that a website is more than just an online brochure—it's a powerful tool for growth. Our passion lies in crafting digital experiences that not only look stunning but also genuinely connect with your audience and convert visitors into loyal customers. We're committed to transparency, collaboration, and delivering solutions that exceed expectations. Let's build something extraordinary together."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="section section--light-gray">
+            <div class="container section__container">
+                <h2 class="section__heading">Why Choose Exotech?</h2>
+                <p class="section__subheading">We stand out by focusing on what truly matters: your success and a seamless development journey.</p>
+                <div class="why-choose-us-grid">
+                    <div class="wcu-card">
+                        <div class="wcu-card__icon"><i class="fas fa-magic"></i></div>
+                        <div class="wcu-card__content">
+                            <h3>Creative Innovation</h3>
+                            <p>We push boundaries to deliver unique and engaging designs that capture attention.</p>
+                        </div>
+                    </div>
+                    <div class="wcu-card">
+                        <div class="wcu-card__icon"><i class="fas fa-shield-alt"></i></div>
+                        <div class="wcu-card__content">
+                            <h3>Reliable Support</h3>
+                            <p>Our team is always here to provide ongoing support and ensure your site runs smoothly.</p>
+                        </div>
+                    </div>
+                    <div class="wcu-card">
+                        <div class="wcu-card__icon"><i class="fas fa-handshake"></i></div>
+                        <div class="wcu-card__content">
+                            <h3>Client-Centric Approach</h3>
+                            <p>Your vision is our blueprint. We collaborate closely to bring your ideas to life.</p>
+                        </div>
+                    </div>
+                    <div class="wcu-card">
+                        <div class="wcu-card__icon"><i class="fas fa-tachometer-alt"></i></div>
+                        <div class="wcu-card__content">
+                            <h3>Performance Optimized</h3>
+                            <p>We build fast, secure, and highly optimized websites for superior user experience.</p>
+                        </div>
+                    </div>
+                    <div class="wcu-card">
+                        <div class="wcu-card__icon"><i class="fas fa-dollar-sign"></i></div>
+                        <div class="wcu-card__content">
+                            <h3>Affordable Excellence</h3>
+                            <p>High-quality web solutions that fit your budget without compromising on impact.</p>
+                        </div>
+                    </div>
+                    <div class="wcu-card">
+                        <div class="wcu-card__icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="wcu-card__content">
+                            <h3>Growth Focused</h3>
+                            <p>Our strategies are designed to help your business grow and thrive online.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Generated Images Section -->
+        <section class="section ai-image-section">
+            <div class="container section__container">
+                <h2 class="section__heading">Where Creativity Meets Code</h2>
+                <p class="section__subheading">A glimpse into the innovative spirit that drives our designs and development.</p>
+                <div class="ai-image-container">
+                    <div class="ai-image-card">
+                        <img src="ai01.jpg" alt="AI Generated Design Concept 1">
+                    </div>
+                    <div class="ai-image-card">
+                        <img src="ai02.jpg" alt="AI Generated Design Concept 2">
+                    </div>
+                    <div class="ai-image-card">
+                        <img src="ai03.jpg" alt="AI Generated Design Concept 3">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Full Team Section -->
+        <section class="section" id="team-section">
+            <div class="container section__container">
+                <h2 class="section__heading">Meet Our Full Team</h2>
+                <p class="section__subheading">
+                    Our diverse team brings together expertise in design, development, and project management to deliver exceptional results.
+                </p>
+                <div class="team-preview-grid">
+                    <div class="team-member-card">
+                        <img src="yashvi_khatri.jpg" alt="Yashvi Khatri - Director" class="team-member-card__image">
+                        <h3 class="team-member-card__name">Yashvi Khatri</h3>
+                        <p class="team-member-card__role">Director</p>
+                        <p class="team-member-card__description">A visionary leader with a strong technical foundation, Yashvi drives the company's innovation and growth, blending design thinking with digital strategy.</p>
+                    </div>
+                    <div class="team-member-card">
+                        <img src="Pankaj_Khatri.jpg" alt="Pankaj Khatri - Web Developer" class="team-member-card__image">
+                        <h3 class="team-member-card__name">Pankaj Khatri</h3>
+                        <p class="team-member-card__role">Web Developer</p>
+                        <p class="team-member-card__description">The coding powerhouse behind our projects, Pankaj transforms ideas into sleek, responsive, and functional websites that leave a lasting impression.</p>
+                    </div>
+                </div>
+                <a href="contact.html" class="btn btn--tertiary">Let’s Collaborate</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container footer__container">
+            <div class="footer__contact-info">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone-alt"></i> <a href="tel:+919510553160">+91 95105 53160</a></p>
+                <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/919510553160" target="_blank">WhatsApp Us</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@exotech.co.in">info@exotech.co.in</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> 603, Exotech Office, Surat, Gujarat, India</p>
+            </div>
+            <div class="footer__social-media">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer__qr-code">
+                <h3>Scan to Connect</h3>
+                <img src="https://placehold.co/120x120/1A324E/FFFFFF?text=QR+Code" alt="QR Code for Exotech Developers" class="footer__qr-image">
+            </div>
         </div>
-        <p class="scan-text">Scan to visit my online profile</p>
-      </div>
-
-      <button class="vcard-btn" id="download-vcard" aria-label="Download vCard">
-        <i class="fas fa-download" aria-hidden="true"></i>
-        <span>Download vCard</span>
-      </button>
-
-      <div class="watermark" aria-hidden="true">Digital vCard | Exotech Developers</div>
-    </aside>
-
-    <section class="right-panel" aria-labelledby="contact-title">
-      <h2 id="contact-title" class="panel-title">Contact Card</h2>
-      <p class="subtitle">Connect with me through various channels</p>
-
-      <div class="contact-info">
-        <div class="contact-item">
-          <div class="contact-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
-          <div class="contact-details">
-            <h3>Email</h3>
-            <p><a href="mailto:pankaj_khatri@exotech.co.in">pankaj_khatri@exotech.co.in</a></p>
-          </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <p>© 2025 EXOTECH Developers. All rights reserved.</p>
+            </div>
         </div>
+    </footer>
 
-        <div class="contact-item">
-          <div class="contact-icon"><i class="fas fa-phone" aria-hidden="true"></i></div>
-          <div class="contact-details">
-            <h3>Phone</h3>
-            <p><a href="tel:+917069785900">+91 70697 85900</a></p>
-          </div>
-        </div>
+    <script src="script.js"></script>
 
-        <div class="contact-item">
-          <div class="contact-icon"><i class="fas fa-globe" aria-hidden="true"></i></div>
-          <div class="contact-details">
-            <h3>Website</h3>
-            <p><a href="https://khatrip009.github.io/pandit-profile/" target="_blank" rel="noopener">khatrip009.github.io/pandit-profile</a></p>
-          </div>
-        </div>
 
-        <div class="contact-item">
-          <div class="contact-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
-          <div class="contact-details">
-            <h3>Location</h3>
-            <p>Surat, Gujarat, India</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="bio-section" aria-labelledby="bio-heading">
-        <h3 id="bio-heading"><i class="fas fa-user-tie" aria-hidden="true"></i> Professional Bio</h3>
-        <p class="bio-text">
-          I am a dedicated software developer at <strong>Exotech Developer</strong>, specializing in building innovative, scalable, and high-performance digital solutions. With a strong focus on precision and modern technologies, I contribute to creating seamless user experiences and robust system architectures. Passionate about continuous learning and excellence, I strive to deliver impactful results that align with organizational goals.
-
-        </p>
-
-        <div class="social-links" aria-label="Social links">
-          <a class="social-link" href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a class="social-link" href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a class="social-link" href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a class="social-link" href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-
-      <div class="signature" aria-hidden="false">
-        <p>Warm regards,</p>
-        <div class="signature-img" aria-hidden="true">
-          <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Signature">
-            <path d="M5,30 Q20,15 35,30 T65,30 T95,20" stroke="#0d9488" stroke-width="2" fill="none"/>
-            <text x="100" y="35" font-family="Poppins" font-size="12" fill="#0d9488">P. Khatri</text>
-          </svg>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <script>
-    function downloadVCard() {
-      const vCardData = `BEGIN:VCARD
-VERSION:3.0
-N:Khatri;Pandit Pankaj
-FN:Pandit Pankaj Khatri
-ORG:Shreeja Biotech
-TITLE:Visionary Leader | Bio-Energy Expert
-TEL;TYPE=WORK,VOICE:+917069785900
-EMAIL;TYPE=PREF,INTERNET:pankaj_khatri@exotech.co.in
-URL:https://khatrip009.github.io/pandit-profile/
-ADR;TYPE=WORK:;;Surat;Gujarat;;India
-NOTE:Renewable Energy Solutions | Waste-to-Energy | Bio-CNG Technology
-END:VCARD`;
-      const blob = new Blob([vCardData], { type: 'text/vcard;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'Pandit_Pankaj_Khatri.vcf';
-      document.body.appendChild(a);
-      a.click();
-      setTimeout(() => {
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-      }, 150);
-    }
-
-    document.getElementById('download-vcard').addEventListener('click', downloadVCard);
-
-    const q = document.querySelector('.qrcode');
-    function openProfile() {
-      window.open('https://khatrip009.github.io/pandit-profile/', '_blank', 'noopener');
-    }
-    q.addEventListener('click', openProfile);
-    q.addEventListener('keydown', (e) => {
-      if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openProfile(); }
-    });
-  </script>
 </body>
-</html>
